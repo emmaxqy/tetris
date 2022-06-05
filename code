@@ -1,0 +1,71 @@
+import random
+import turtle
+import pygame
+
+game = turtle.Screen()
+game.title('tetris')
+game.setup(width=200,height=300)
+
+class shape():
+    shapes = [square,line,l1,l2,s1,s2,t]
+    square = [[1,1],
+              [1,1]]
+    line = [[ 1, 1, 1, 1 ]]    
+    l1 = [[ 1, 0, 0, 0 ],
+            [ 1, 1, 1, 1 ]]
+    l2 = [[ 0, 0, 0, 1 ],
+            [ 1, 1, 1, 1, ] ]
+    s1   = [[ 1, 1, 0 ],
+             [ 0, 1, 1 ] ]
+    s2   = [[ 0, 1, 1 ],
+             [ 1, 1, 0 ]]
+    t = [ [ 0, 1, 0 ],
+          [ 1, 1, 1 ] ]
+    shape_colours = [(240,248,255),(100,149,237),(230,230,250),(255,193,193),(202,225,255),(159,182,205),(255,250,205)] 
+
+class Piece(object):
+    rows = 20 
+    columns = 10 
+    def __init__(self, column, row, shape):
+        self.x = 10
+        self.y = 15
+        self.shape = shape
+        self.colour = self.color = shape_colors[shapes.index(shape)]
+
+def draw_border() :
+    border = turtle.Turtle()
+    border.pensize(10)
+    border.up()
+    border.goto(50,50)
+    border.color(159,182,205)
+    border.down()
+    border.fd(100)
+    border.lt(90)
+    border.fd(150)
+    border.t(100)
+    border.lt(90)
+    border.fd(150)
+    border.up()
+
+
+def getshape() :
+    return random.choice(shapes)
+
+def rotate(self):
+
+def main() :
+    while run :
+        if event.type == pygame.QUIT:
+            run = False
+            pygame.display.quit()
+            quit()
+        if event.type == pygame.KEYDOWN:
+            if event.type == pygame.K_LEFT and self.x > 100
+                current_piece.x -= 1
+            if event.type == pygame.K_Right and self.x < 200
+                current_piece.x -= 1    
+            elif event.key == pygame.K_UP:
+                current_piece.rotation = current_piece.rotation + 1 % len(current_piece.shape)
+            if event.key == pygame.K_DOWN and self.y > 80:
+                current_piece.y += 1
+        draw_border(game, grid)
